@@ -1,0 +1,25 @@
+import logging
+from flask import Flask, render_template, request, send_from_directory
+
+app = Flask(__name__, static_folder='../arxena-frontend/build/static', template_folder='../arxena-frontend/build')
+
+
+@app.route('/')
+def home_page():
+    logging.info("This is the blank path::%s",request.path)
+    logging.info("This is the blank form::%s",request.form)
+    messages = {}
+    return render_template('index.html', messages = messages)
+
+@app.route('/static/<path:path>', methods=['GET'])
+@app.route('/<path:path>', methods=['GET', 'POST'])
+def send_js(path):
+    messages = {}
+    return render_template('index.html', messages = messages)
+
+@app.route('/<number>/static/<path:path>', methods=['GET'])
+def send_company_static_js(path, number):
+    return send_from_directory(app.static_folder, path)
+
+if __name__ == '__main__':
+    app.run(port=5051, host='localhost', debug=True, use_debugger=True, use_reloader=True)
