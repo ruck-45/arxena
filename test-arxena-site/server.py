@@ -1,7 +1,7 @@
 import logging
 from flask import Flask, render_template, request, send_from_directory
 
-app = Flask(__name__, static_folder='../arxena-frontend/build/static', template_folder='../arxena-frontend/build')
+app = Flask(__name__, static_folder='../arxena-react-frontend/build/static', template_folder='../arxena-react-frontend/build')
 
 
 @app.route('/')

@@ -2,7 +2,7 @@
 /env
 
 # dependencies
-/arxena-frontend/node_modules
+/arxena-react-frontend/node_modules
 
 # production
-/arxena-frontend/build
+/arxena-eract-frontend/build
