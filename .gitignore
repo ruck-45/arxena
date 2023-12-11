@@ -1,1 +1,8 @@
+# environment
 /env
+
+# dependencies
+/arxena-frontend/node_modules
+
+# production
+/arxena-frontend/build
